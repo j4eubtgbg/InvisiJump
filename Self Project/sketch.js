@@ -50,6 +50,8 @@ function draw() {
     if(keyDown('d')){
         player.x = player.x+10;
     }
+
+    //console.log(player.x);
 }
     player.velocityY = player.velocityY + 0.8
 
@@ -58,18 +60,28 @@ function draw() {
    
     player.collide(test);
     player.collide(wall2);
+
 if(player.collide(edges)){
     player.x = 200;
     player.y = 200;
     noj = 1;
 }
- 
+    
     lifetime--;
     drawSprites();
-    
- 
+win();
 }   
 
+function win(){
+    if(player.x>=1000){
+      textSize(25);
+      fill('black');
+      text('YOU WIN',200,200);
+         test.visible = true;
+         wall2.visible= true;
+        console.log('YOU WIN');
+    }   
+}
 
 
 
